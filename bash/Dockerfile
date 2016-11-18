@@ -16,3 +16,4 @@ RUN cd /tmp \
    && mv ./apache-maven-3.3.9 /usr/share/maven \
    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
+RUN apk --no-cache add bash
