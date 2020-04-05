@@ -11,5 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Trigger Dockerhub
+    - name: Trigger Dockerhub (master)
       run: curl -X POST ${{ secrets.HUB_TRIGGER_URL }}
+    - name: Trigger Dockerhub (2.0)
+      run: curl -X POST -d '{"source_type":"Branch","source_name":"2.0"}' ${{ secrets.HUB_TRIGGER_URL }}
